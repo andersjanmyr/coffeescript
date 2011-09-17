@@ -10,6 +10,26 @@
     pi = "π"
     result = "#{22/7} is approximately #{pi}"
 
+!SLIDE execute small
+# Strings (multiline)
+    @@@coffeescript
+    result = "Call me Ishmael. Some years ago --
+    never mind how long precisely -- having little
+    or no money in my purse, and nothing particular
+    to interest me on shore, I thought I would sail
+    about a little and see the watery part of the
+    world..."
+
+!SLIDE execute small
+# Strings (")
+    @@@coffeescript
+    result = "Call me Ishmael. Some years ago --
+    never mind how long precisely -- having little
+    or no money in my purse, and nothing particular
+    to interest me on shore, I thought I would sail
+    about a little and see the watery part of the
+    world..."
+
 !SLIDE 
 # Functions
 
