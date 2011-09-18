@@ -211,10 +211,12 @@
     result = [inclusive, exclusive]
 
 
-!SLIDE 
+!SLIDE small
+# Operators and Aliases
+
 <table>
 <tr>
-<td>CoffeeScript</td><td>JavaScript</td>
+<th>CoffeeScript</th><th>JavaScript</th>
 </tr>
 <tr>
 <td>is</td><td>===</td>
@@ -281,8 +283,23 @@
     lottery = {}
     result = lottery.drawWinner?().address?.zipcode
 
-!SLIDE 
+!SLIDE small
 # Classes, Inheritance, and Super
 
 
+!SLIDE small
+# Destructuring Assignment
+
+
+!SLIDE small
+# Switch/When/Else
+
+!SLIDE small
+# while, until
+
+!SLIDE small
+# Chained Comparisons
+
+!SLIDE small
+# Embedded Javascript
 

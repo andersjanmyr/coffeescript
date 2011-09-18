@@ -15,35 +15,25 @@ h1, h2 {
   content: url(images/jay_small.png);
 }
 
+table {
+  width: 100%;
+  margin: 50px;
+}
 th {
     font-size: 2em;
     text-align: left;
     background: darkgray;
     padding: .5em;
 }
-th:nth-child(3) {
-    font-size: 1.2em;
-}
 
 tr:nth-child(2n+1) {
     background: lightgray;
 }
 td {
-    padding: .4em;
-}
-
-td pre {
-  font-size: 36px;
-}
-
-td:nth-child(1) {
+    padding: .2em;
     font-size: 2em;
-    padding-left: .4em;
 }
-td:nth-child(3) {
-    font-size: 1.4em;
-    padding-left: .4em;
-}
+
 
 .bullets ul {
   list-style: square url(images/jay_bullet_large.png);
