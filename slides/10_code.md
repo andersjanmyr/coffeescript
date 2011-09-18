@@ -5,7 +5,7 @@
     result = '#{22/7} is approximately #{pi}'
 
 !SLIDE execute
-# Strings (")
+# Strings (") interpolation
     @@@coffeescript
     pi = "π"
     result = "#{22/7} is approximately #{pi}"
@@ -21,14 +21,12 @@
     world..."
 
 !SLIDE execute small
-# Strings (")
+# Here docs (''' or """)
     @@@coffeescript
-    result = "Call me Ishmael. Some years ago --
-    never mind how long precisely -- having little
-    or no money in my purse, and nothing particular
-    to interest me on shore, I thought I would sail
-    about a little and see the watery part of the
-    world..."
+      result = """
+        Whitespace matters and I can use quotes (')
+        and double quotes (") as I like in the text.
+        """
 
 !SLIDE 
 # Functions
@@ -42,17 +40,37 @@
       console.log 'Button clicked: ', this
 
 !SLIDE 
-# Parameters
+# Default Parameters
 
     @@@coffeescript
     # Default parameters
     sleep = (callback, millis = 1000) ->
       setTimeout(callback, millis)
 
-    # Splats (varargs)
+!SLIDE 
+# Splats (varargs)
+
+    # Declaration
     moveFiles = (dir, files...) ->
       moveFile(dir, file) for file in files
 
+    # Invocation
+    files = [ 'lib', 'a.js', 'b.js', 'c.js']
+    moveFiles files...
+    
+
+!SLIDE 
+# Function Binding (=>)
+
+    @@@coffeescript
+    Account = (customer, cart) ->
+      @customer = customer
+      @cart = cart
+      
+      # var self = this;
+      # self.customer.purchase ...
+      $('.shopping_cart').click (event) =>
+        @customer.purchase @cart
 
 !SLIDE 
 # Objects
@@ -136,7 +154,7 @@
 
     result = (i for i in [1..20] when hasDigit(2, i))
 
-!SLIDE execute
+!SLIDE execute small
 
 # Object Comprehensions (of)
 
@@ -166,5 +184,105 @@
       weight: '28 grams'
 
     result = (value for key, value of phone)
+
+
+!SLIDE execute small
+# Object Comprehensions (own of)
+
+    @@@coffeescript
+    phone =
+      id: 'arc'
+      name: 'Xperia Arc'
+
+    newPhone = Object.create(phone)
+    newPhone.color = 'blue'
+    # *own* checks hasOwnProperty
+    result = (key for own key of newPhone)
+
+
+!SLIDE execute small
+# Array Slicing (ranges)
+    @@@coffeescript
+    numbers = [0, 10, 20, 30]
+
+    inclusive  = numbers[1..3]
+    exclusive  = numbers[1...3]
+
+    result = [inclusive, exclusive]
+
+
+!SLIDE 
+<table>
+<tr>
+<td>CoffeeScript</td><td>JavaScript</td>
+</tr>
+<tr>
+<td>is</td><td>===</td>
+</tr>
+<tr>
+<td>isnt</td><td>!==</td>
+</tr>
+<tr>
+<td>not</td><td>!</td>
+</tr>
+<tr>
+<td>and</td><td>&amp;&amp;</td>
+</tr>
+<tr>
+<td>or</td><td>||</td>
+</tr>
+<tr>
+<td>true, yes, on</td><td>true</td>
+</tr>
+<tr>
+<td>false, no, off</td><td>false</td>
+</tr>
+<tr>
+<td>@, this</td><td>this</td>
+</tr>
+<tr>
+<td>of</td><td>in</td>
+</tr>
+<tr>
+<td>in</td><td>no JS equivalent</td>
+</tr>
+</table>
+
+!SLIDE small
+# Operators Example
+    @@@coffeescript
+    launch() if ignition is on
+
+    volume = 10 if band isnt SpinalTap
+
+    letTheWildRumpusBegin() unless answer is no
+
+    if car.speed < limit then accelerate()
+
+    winner = yes if pick in [47, 92, 13]
+
+    print inspect "My name is #{@name}"
+
+
+
+!SLIDE small
+# The existential operator (?)
+    
+    @@@coffeescript
+    solipsism = true if mind? and not world?
+
+    speed ?= 75
+
+    footprints = yeti ? "bear"
+
+!SLIDE small 
+# The accessor existential operator (?.)
+    @@@coffeescript
+    lottery = {}
+    result = lottery.drawWinner?().address?.zipcode
+
+!SLIDE 
+# Classes, Inheritance, and Super
+
 
 
