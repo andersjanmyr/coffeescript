@@ -7,7 +7,7 @@
 
 ## Presentation
 
-* http://anders.janmyr.github.com/coffeescript
+* http://andersjanmyr.github.com/coffeescript
 
 
 !SLIDE
