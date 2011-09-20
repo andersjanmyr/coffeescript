@@ -3,11 +3,11 @@
 
 ## Code
 
-* http:://github.com/andersjanmyr/TODO CODE HERE 
+* http:://github.com/andersjanmyr/coffeescript 
 
 ## Presentation
 
-* http://github.com/andersjanmyr/TODO PRESENTATION HERE
+* http://anders.janmyr.github.com/coffeescript
 
 
 !SLIDE

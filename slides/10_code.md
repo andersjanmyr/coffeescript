@@ -49,7 +49,8 @@
 
 !SLIDE 
 # Splats (varargs)
-
+    
+    @@@coffeescript
     # Declaration
     moveFiles = (dir, files...) ->
       moveFile(dir, file) for file in files
@@ -199,6 +200,14 @@
     # *own* checks hasOwnProperty
     result = (key for own key of newPhone)
 
+!SLIDE small
+# do
+
+    @@@coffeescript
+    for filename in list
+      do (filename) ->
+        fs.readFile filename, (err, contents) ->
+          compile filename, contents.toString()
 
 !SLIDE execute small
 # Array Slicing (ranges)
@@ -263,8 +272,6 @@
 
     winner = yes if pick in [47, 92, 13]
 
-    print inspect "My name is #{@name}"
-
 
 
 !SLIDE small
@@ -281,25 +288,93 @@
 # The accessor existential operator (?.)
     @@@coffeescript
     lottery = {}
-    result = lottery.drawWinner?().address?.zipcode
+    zipcodeOfWinner =
+      lottery.drawWinner?().address?.zipcode
 
-!SLIDE small
-# Classes, Inheritance, and Super
+!SLIDE execute small 
+# Classes
+
+    @@@coffeescript
+    class Animal
+      constructor: (@name) ->
+
+      move: (meters) ->
+        @name + " moved #{meters}m."
+    
+    # Create an animal and invoke move.
+    animal = new Animal('Hugo')
+    result = animal.move 10
 
 
-!SLIDE small
+!SLIDE execute small 
+# Inheritance, and Super
+
+    @@@coffeescript
+    class Animal
+      constructor: (@name) ->
+      move: (meters) ->
+        @name + " moved #{meters}m."
+    
+    class Snake extends Animal
+      move: ->
+        alert "Slithering..."
+        super  
+
+    snake = new Snake 'Anders'
+    result = snake.move 22
+
+!SLIDE execute small
 # Destructuring Assignment
 
+    @@@coffeescript
+    futurists =
+      sculptor: "Umberto Boccioni"
+      painter:  "Vladimir Burliuk"
+      poet:
+        name:   "F.T. Marinetti"
+        address: [
+          "Via Roma 42R"
+          "Bellagio, Italy 22021"
+        ]
 
-!SLIDE small
+    {poet: {name, address: [street, city]}} = futurists
+    result = [name, street, city]
+
+!SLIDE execute small
 # Switch/When/Else
+
+    @@@coffeescript
+    day = 'Fri'
+    switch day
+      when "Mon" then alert('work')
+      when "Thu" then alert('iceFishing')
+      when "Fri", "Sat"
+          alert('dancing')
+      else alert('sleep')
 
 !SLIDE small
 # while, until
 
-!SLIDE small
+    @@@coffeescript
+    if this.studyingEconomics
+      buy()  while supply > demand
+      sell() until supply > demand
+
+!SLIDE execute small
 # Chained Comparisons
 
-!SLIDE small
+    @@@coffeescript
+    cholesterol = 127
+
+    result = 200 > cholesterol > 60
+
+!SLIDE execute small
 # Embedded Javascript
+
+    @@@coffeescript
+    # Javascript can be embedded with backticks (`)
+    hi = `function() {
+      return [document.title, "Hello JavaScript"].join(": ");
+    }`
+    result = hi()
 
