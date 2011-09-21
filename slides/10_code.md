@@ -360,6 +360,11 @@
       buy()  while supply > demand
       sell() until supply > demand
 
+    while supply > demand
+      buy()
+    until supply > demand
+      sell() 
+
 !SLIDE execute small
 # Chained Comparisons
 
