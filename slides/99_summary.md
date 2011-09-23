@@ -3,7 +3,8 @@
 
 ## Code
 
-* http:://github.com/andersjanmyr/coffeescript 
+* http://jashkenas.github.com/coffee-script/
+* http://pow.cx/docs/
 
 ## Presentation
 
